@@ -10,7 +10,8 @@ async function getCountries(){
         const Timezone = document.createElement('textarea');
         const Country = document.createElement('p');
         Country.id = ""
-        img.src = count.flag + "";
+        img.id = "flag";
+        img.src = count.flag;
         img.width = 150;
         img.height = 100;
         document.body.appendChild(CardDiv);
@@ -24,7 +25,8 @@ async function getCountries(){
         // document.body.appendChild(img);
        Population.innerHTML = "population: " + `${count.population}` +  " people";
        
-       Timezone.innerHTML = "TimeZone: " + count.timezones ;
+       Timezone.innerHTML = "TimeZone: " + count.timezones.reduce((p, v) => `${p}<br />${v}`) ;
+       Timezone.style.resize = 'vertical';
            
        
        
