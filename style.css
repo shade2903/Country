@@ -1,0 +1,10 @@
+#cardDiv{
+    
+    background-color: blue;
+    border: black solid 1px;
+    width: 35%;
+    height: 250px;
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
