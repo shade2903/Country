@@ -1,6 +1,12 @@
-async function getCountries(){
-    const resp = await fetch ('https://restcountries.eu/rest/v2/all');
+
+let Ebody = document.getElementById('body');
+const LINK = 'https://restcountries.eu/rest/v2/all';
+
+async function getCountries(link){
+    Ebody.innerHTML="";
+    const resp = await fetch (`${link}`);   
     const countries = await resp.json();  
+    
  
     for (let count of countries){
         const img =document.createElement('img');
@@ -14,24 +20,35 @@ async function getCountries(){
         img.src = count.flag;
         img.width = 150;
         img.height = 100;
-        document.body.appendChild(CardDiv);
+        Ebody.appendChild(CardDiv);
         Country.innerHTML = count.name;
         CardDiv.appendChild(Country);
         CardDiv.appendChild(img)
         CardDiv.appendChild(Population)
-        CardDiv.appendChild(Timezone)
-    //     var card = document.getElementById("cardDiv");
-    //    card.appendChild(img);
-        // document.body.appendChild(img);
+        CardDiv.appendChild(Timezone)    
        Population.innerHTML = "population: " + `${count.population}` +  " people";
        
-       Timezone.innerHTML = "TimeZone: " + count.timezones.reduce((p, v) => `${p}<br />${v}`) ;
-       Timezone.style.resize = 'vertical';
-           
-       
-       
+       Timezone.innerHTML = "TimeZone: " + count.timezones.reduce((p, v) => `${p} ${v}`) ;
+       Timezone.style.resize = 'vertical';                  
        
     }
 }
-getCountries();
+getCountries(LINK);
+
+function buttonClick() {   
+
+    if(document.getElementById('search').value==="")  {
+        getCountries(LINK);
+    } else{
+        let link = `https://restcountries.eu/rest/v2/name/${document.getElementById('search').value}`
+        getCountries(link);
+    }    
+   
+  }
+  function  clickPress(event) {
+    if (event.keyCode == 13) {
+        buttonClick();
+    }
+}
+
 
