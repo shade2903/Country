@@ -33,9 +33,9 @@ async function getCountries(link){
         Country.innerHTML = count.name;  
         Country.id = "countryName"
         Btn.id= "Button"
-        Btn.textContent ="Open map";
+        Btn.textContent ="Open the map";
         CardDiv.appendChild(Btn);
-        var coordinates = 
+         
         Btn.onclick = ()=>{
             window.open(`https://yandex.by/maps/?ll=${count.latlng[1]}%2C${count.latlng[0]}&z=6`);
            
