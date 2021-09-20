@@ -15,13 +15,14 @@ async function getCountries(link){
         const Population = document.createElement('div');
         const Timezone = document.createElement('textarea');
         const Country = document.createElement('p');
-        Country.id = ""
+        Country.id = "countryName"
         img.id = "flag";
         img.src = count.flag;
         img.width = 150;
         img.height = 100;
         Ebody.appendChild(CardDiv);
         Country.innerHTML = count.name;
+        // console.log(count.name.length)
         CardDiv.appendChild(Country);
         CardDiv.appendChild(img)
         CardDiv.appendChild(Population)
@@ -29,7 +30,12 @@ async function getCountries(link){
        Population.innerHTML = "population: " + `${count.population}` +  " people";
        
        Timezone.innerHTML = "TimeZone: " + count.timezones.reduce((p, v) => `${p} ${v}`) ;
-       Timezone.style.resize = 'vertical';                  
+       Timezone.style.resize = 'vertical';   
+    //    if(count.name.length>20){
+    //        Country.style.fontSize = "10pt";
+    //    } else{
+    //     Country.style.fontSize = "14pt";
+    //    }              
        
     }
 }
@@ -50,5 +56,7 @@ function buttonClick() {
         buttonClick();
     }
 }
+let str = "string";
+console.log(str.length)
 
 

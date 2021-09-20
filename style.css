@@ -1,13 +1,16 @@
 #cardDiv{  
    
     border: black solid 1px;
-    width: 25%;
-    height: 250px;
+    width: 33%;
+    height: 280px;
     display: inline-block;
     margin: 0;
     padding: 0;
     text-align: center;
+    background-color: rgb(238, 244, 245);
 }
-#flag{
-  
+
+#countryName{
+    font-size: 20px;
+    text-shadow: #FC0 1px 0 10px;
 }
