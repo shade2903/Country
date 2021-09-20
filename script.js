@@ -37,7 +37,7 @@ async function getCountries(link){
         CardDiv.appendChild(Btn);
          
         Btn.onclick = ()=>{
-            window.open(`https://yandex.by/maps/?ll=${count.latlng[1]}%2C${count.latlng[0]}&z=6`);
+            window.open(`https://yandex.by/maps/?ll=${count.latlng[1]}%2C${count.latlng[0]}&z=7`);
            
         }
 
