@@ -7,10 +7,15 @@
 </head>
 <body >
     <div>
-        <form name="form" onsubmit="buttonClick()">
-          <input type="text" id="search" placeholder="enter country" nkeypress="clickPress(event)" >
-          <button type="button" onclick="buttonClick()">SEARCH</button>          
-        </form>
+      <input type="text" id="search" placeholder="enter country" onkeypress="clickPress(event)" >
+      <input type="button" onclick="buttonClick()"
+      value="SEARCH">     
+
+        <!-- <form name="form" onsubmit="buttonClick()" action="">
+          <input type="text" id="search" placeholder="enter country" onkeypress="clickPress(event)" >
+          <input type="button" onclick="buttonClick()"
+          value="SEARCH">     
+        </form> -->
       </div>
       <div id = "body"></div>
       

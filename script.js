@@ -61,7 +61,8 @@ async function getCountries(link){
 }
 getCountries(LINK);
 
-function buttonClick() {   
+function buttonClick() { 
+
 
     if(document.getElementById('search').value==="")  {
         getCountries(LINK);
@@ -72,6 +73,7 @@ function buttonClick() {
    
   }
   function  clickPress(event) {
+      console.log(event);
     if (event.keyCode == 13) {
         buttonClick();
     }
